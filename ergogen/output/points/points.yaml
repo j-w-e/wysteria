@@ -1,0 +1,921 @@
+main_pinkie_bottom:
+    x: 117.0506184
+    'y': -190.5233653
+    r: 5
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: pinkie_bottom
+        name: main_pinkie_bottom
+        bind:
+            - 1
+            - 1
+            - 1
+            - 1
+        tags:
+            alphas: true
+        col_net: c_pinkie
+        row_net: r_bottom
+        key: &ref_0
+            led_prev: LED_15
+            led_next: LED_16
+        zone: &ref_3
+            key:
+                padding: ky
+                spread: kx
+                tags:
+                    alphas: true
+            rows:
+                bottom:
+                    row_net: r_bottom
+                home:
+                    row_net: r_home
+                top:
+                    row_net: r_top
+            columns:
+                pinkie: &ref_1
+                    key:
+                        col_net: c_pinkie
+                    rows:
+                        top:
+                            adjust:
+                                shift: &ref_4
+                                    - '-kx'
+                                    - '-0.8ky'
+                            key: &ref_5
+                                led_prev: LED_17
+                                led_next: LED_18
+                        home:
+                            key: &ref_2
+                                led_prev: LED_16
+                                led_next: LED_17
+                        bottom:
+                            key: *ref_0
+                    name: pinkie
+                ring: &ref_7
+                    key:
+                        splay: -5
+                        stagger: 10
+                        spread: 20.5
+                        col_net: c_ring
+                        bind:
+                            - b
+                            - b
+                            - b
+                            - b
+                    rows:
+                        top:
+                            key: &ref_9
+                                led_prev: LED_12
+                                led_next: LED_13
+                        home:
+                            key: &ref_8
+                                led_prev: LED_13
+                                led_next: LED_14
+                        bottom:
+                            key: &ref_6
+                                led_prev: LED_14
+                                led_next: LED_15
+                    name: ring
+                middle: &ref_11
+                    key:
+                        stagger: 10
+                        col_net: c_middle
+                    rows:
+                        top:
+                            key: &ref_13
+                                led_prev: LED_11
+                                led_next: LED_12
+                        home:
+                            key: &ref_12
+                                led_prev: LED_10
+                                led_next: LED_11
+                        bottom:
+                            key: &ref_10
+                                led_prev: LED_9
+                                led_next: LED_10
+                    name: middle
+                index: &ref_15
+                    key:
+                        stagger: -10
+                        col_net: c_index
+                        bind:
+                            - b
+                            - b
+                            - b
+                            - kx
+                    rows:
+                        top:
+                            key: &ref_17
+                                led_prev: LED_6
+                                led_next: LED_7
+                        home:
+                            key: &ref_16
+                                led_prev: LED_7
+                                led_next: LED_8
+                        bottom:
+                            key: &ref_14
+                                led_prev: LED_8
+                                led_next: LED_9
+                    name: index
+                inner: &ref_19
+                    key:
+                        stagger: -2
+                        bind:
+                            - b+2
+                            - b
+                            - ky
+                            - b
+                        col_net: c_inner
+                    rows:
+                        top:
+                            key: &ref_21
+                                led_prev: LED_5
+                                led_next: LED_6
+                        home:
+                            key: &ref_20
+                                led_prev: LED_4
+                                led_next: LED_5
+                        bottom:
+                            key: &ref_18
+                                led_prev: LED_3
+                                led_next: LED_4
+                    name: inner
+            name: main
+        col: *ref_1
+        row: bottom
+main_pinkie_home:
+    x: 115.3946592
+    'y': -171.5956661
+    r: 5
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: pinkie_home
+        name: main_pinkie_home
+        bind:
+            - 1
+            - 1
+            - 1
+            - 1
+        tags:
+            alphas: true
+        col_net: c_pinkie
+        row_net: r_home
+        key: *ref_2
+        zone: *ref_3
+        col: *ref_1
+        row: home
+main_pinkie_top:
+    x: 96.1357682
+    'y': -169.4660853
+    r: 5
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust:
+            shift: *ref_4
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: pinkie_top
+        name: main_pinkie_top
+        bind:
+            - 1
+            - 1
+            - 1
+            - 1
+        tags:
+            alphas: true
+        col_net: c_pinkie
+        row_net: r_top
+        key: *ref_5
+        zone: *ref_3
+        col: *ref_1
+        row: top
+main_ring_bottom:
+    x: 136.6010522
+    'y': -178.7747256
+    r: 0
+    meta:
+        stagger: 10
+        spread: 20.5
+        splay: -5
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: ring_bottom
+        name: main_ring_bottom
+        bind:
+            - 1
+            - 1
+            - 1
+            - 1
+        tags:
+            alphas: true
+        col_net: c_ring
+        row_net: r_bottom
+        key: *ref_6
+        zone: *ref_3
+        col: *ref_7
+        row: bottom
+main_ring_home:
+    x: 136.6010522
+    'y': -159.7747256
+    r: 0
+    meta:
+        stagger: 10
+        spread: 20.5
+        splay: -5
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: ring_home
+        name: main_ring_home
+        bind:
+            - 1
+            - 1
+            - 1
+            - 1
+        tags:
+            alphas: true
+        col_net: c_ring
+        row_net: r_home
+        key: *ref_8
+        zone: *ref_3
+        col: *ref_7
+        row: home
+main_ring_top:
+    x: 136.6010522
+    'y': -140.7747256
+    r: 0
+    meta:
+        stagger: 10
+        spread: 20.5
+        splay: -5
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: ring_top
+        name: main_ring_top
+        bind:
+            - 1
+            - 1
+            - 1
+            - 1
+        tags:
+            alphas: true
+        col_net: c_ring
+        row_net: r_top
+        key: *ref_9
+        zone: *ref_3
+        col: *ref_7
+        row: top
+main_middle_bottom:
+    x: 155.6010522
+    'y': -168.7747256
+    r: 0
+    meta:
+        stagger: 10
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: middle_bottom
+        name: main_middle_bottom
+        bind:
+            - 1
+            - 1
+            - 1
+            - 1
+        tags:
+            alphas: true
+        col_net: c_middle
+        row_net: r_bottom
+        key: *ref_10
+        zone: *ref_3
+        col: *ref_11
+        row: bottom
+main_middle_home:
+    x: 155.6010522
+    'y': -149.7747256
+    r: 0
+    meta:
+        stagger: 10
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: middle_home
+        name: main_middle_home
+        bind:
+            - 1
+            - 1
+            - 1
+            - 1
+        tags:
+            alphas: true
+        col_net: c_middle
+        row_net: r_home
+        key: *ref_12
+        zone: *ref_3
+        col: *ref_11
+        row: home
+main_middle_top:
+    x: 155.6010522
+    'y': -130.7747255
+    r: 0
+    meta:
+        stagger: 10
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: middle_top
+        name: main_middle_top
+        bind:
+            - 1
+            - 1
+            - 1
+            - 1
+        tags:
+            alphas: true
+        col_net: c_middle
+        row_net: r_top
+        key: *ref_13
+        zone: *ref_3
+        col: *ref_11
+        row: top
+main_index_bottom:
+    x: 174.6010522
+    'y': -178.7747256
+    r: 0
+    meta:
+        stagger: -10
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: index_bottom
+        name: main_index_bottom
+        bind:
+            - 1
+            - 1
+            - 1
+            - 19
+        tags:
+            alphas: true
+        col_net: c_index
+        row_net: r_bottom
+        key: *ref_14
+        zone: *ref_3
+        col: *ref_15
+        row: bottom
+main_index_home:
+    x: 174.6010522
+    'y': -159.7747256
+    r: 0
+    meta:
+        stagger: -10
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: index_home
+        name: main_index_home
+        bind:
+            - 1
+            - 1
+            - 1
+            - 19
+        tags:
+            alphas: true
+        col_net: c_index
+        row_net: r_home
+        key: *ref_16
+        zone: *ref_3
+        col: *ref_15
+        row: home
+main_index_top:
+    x: 174.6010522
+    'y': -140.7747255
+    r: 0
+    meta:
+        stagger: -10
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: index_top
+        name: main_index_top
+        bind:
+            - 1
+            - 1
+            - 1
+            - 19
+        tags:
+            alphas: true
+        col_net: c_index
+        row_net: r_top
+        key: *ref_17
+        zone: *ref_3
+        col: *ref_15
+        row: top
+main_inner_bottom:
+    x: 193.6010522
+    'y': -180.7747256
+    r: 0
+    meta:
+        stagger: -2
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: inner_bottom
+        name: main_inner_bottom
+        bind:
+            - 3
+            - 1
+            - 19
+            - 1
+        tags:
+            alphas: true
+        col_net: c_inner
+        row_net: r_bottom
+        key: *ref_18
+        zone: *ref_3
+        col: *ref_19
+        row: bottom
+main_inner_home:
+    x: 193.6010522
+    'y': -161.7747256
+    r: 0
+    meta:
+        stagger: -2
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: inner_home
+        name: main_inner_home
+        bind:
+            - 3
+            - 1
+            - 19
+            - 1
+        tags:
+            alphas: true
+        col_net: c_inner
+        row_net: r_home
+        key: *ref_20
+        zone: *ref_3
+        col: *ref_19
+        row: home
+main_inner_top:
+    x: 193.6010522
+    'y': -142.7747255
+    r: 0
+    meta:
+        stagger: -2
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: inner_top
+        name: main_inner_top
+        bind:
+            - 3
+            - 1
+            - 19
+            - 1
+        tags:
+            alphas: true
+        col_net: c_inner
+        row_net: r_top
+        key: *ref_21
+        zone: *ref_3
+        col: *ref_19
+        row: top
+thumb_tuckie_home:
+    x: 184.1010522
+    'y': -199.7747256
+    r: -10
+    meta:
+        stagger: 0
+        spread: 19
+        splay: -10
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: tuckie_home
+        name: thumb_tuckie_home
+        bind:
+            - 19
+            - 1
+            - 1
+            - 1
+        tags:
+            alphas: true
+        col_net: c_ring
+        row_net: r_thumb
+        key: &ref_22
+            led_prev: LED_2
+            led_next: LED_3
+        zone: &ref_25
+            key:
+                splay: -10
+                tags:
+                    alphas: true
+            rows:
+                home:
+                    row_net: r_thumb
+            columns:
+                tuckie: &ref_23
+                    key:
+                        bind:
+                            - kx
+                            - b
+                            - b
+                            - b
+                        col_net: c_ring
+                    rows:
+                        home:
+                            key: *ref_22
+                    name: tuckie
+                central: &ref_26
+                    key:
+                        shift:
+                            - 3
+                            - -2
+                        col_net: c_middle
+                        bind:
+                            - b
+                            - b
+                            - b
+                            - b
+                    rows:
+                        home:
+                            key: &ref_24
+                                led_prev: LED_1
+                                led_next: LED_2
+                    name: central
+                stretchie: &ref_28
+                    key:
+                        shift:
+                            - 6.5
+                            - -3.5
+                        col_net: c_index
+                        bind:
+                            - b
+                            - b
+                            - b
+                            - b
+                    rows:
+                        home:
+                            key: &ref_27
+                                led_prev: led
+                                led_next: LED_1
+                    name: stretchie
+            name: thumb
+        col: *ref_23
+        row: home
+thumb_central_home:
+    x: 204.9474371
+    'y': -205.97948670000002
+    r: -20
+    meta:
+        stagger: 0
+        spread: 19
+        splay: -10
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 3
+            - -2
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: central_home
+        name: thumb_central_home
+        bind:
+            - 1
+            - 1
+            - 1
+            - 1
+        tags:
+            alphas: true
+        col_net: c_middle
+        row_net: r_thumb
+        key: *ref_24
+        zone: *ref_25
+        col: *ref_26
+        row: home
+thumb_stretchie_home:
+    x: 224.54572439999998
+    'y': -215.85351260000004
+    r: -30
+    meta:
+        stagger: 0
+        spread: 19
+        splay: -10
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 6.5
+            - -3.5
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: stretchie_home
+        name: thumb_stretchie_home
+        bind:
+            - 1
+            - 1
+            - 1
+            - 1
+        tags:
+            alphas: true
+        col_net: c_index
+        row_net: r_thumb
+        key: *ref_27
+        zone: *ref_25
+        col: *ref_28
+        row: home
+encoder_rotary_key:
+    x: 216.6010522
+    'y': -184.57472560000002
+    r: 0
+    meta:
+        stagger: 0
+        spread: 19
+        splay: 0
+        origin:
+            - 0
+            - 0
+        orient: 0
+        shift:
+            - 0
+            - 0
+        rotate: 0
+        adjust: {}
+        width: 18
+        height: 18
+        padding: 19
+        autobind: 10
+        skip: false
+        asym: both
+        colrow: rotary_key
+        name: encoder_rotary_key
+        bind:
+            - 0
+            - 1
+            - 19
+            - 1
+        tags:
+            rotary: true
+        col_net: c_inner
+        row_net: r_thumb
+        zone:
+            key:
+                tags:
+                    rotary: true
+            rows:
+                key:
+                    row_net: r_thumb
+            columns:
+                rotary: &ref_29
+                    key:
+                        bind:
+                            - 0
+                            - b
+                            - ky
+                            - b
+                        col_net: c_inner
+                    rows: {}
+                    name: rotary
+            name: encoder
+        col: *ref_29
+        row: key

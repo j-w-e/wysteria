@@ -1,0 +1,413 @@
+units:
+    kx: u
+    ky: u
+    px: kx + 4
+    py: ky + 4
+    hx: 0.5kx
+    hy: 0.5ky
+    b: 2
+points:
+    key:
+        bind: b
+    zones:
+        main:
+            anchor:
+                shift:
+                    - 100
+                    - -200
+            rotate: 15
+            key:
+                padding: ky
+                spread: kx
+                tags:
+                    alphas: true
+            rows:
+                bottom:
+                    row_net: P4
+                home:
+                    row_net: P3
+                top:
+                    row_net: P2
+            columns:
+                outer:
+                    key:
+                        col_net: P21
+                    rows:
+                        bottom:
+                            skip: true
+                        home:
+                            row_net: P5
+                pinkie:
+                    key:
+                        stagger: 10
+                        bind:
+                            - b
+                            - 15
+                            - b
+                            - b
+                        col_net: P21
+                    rows:
+                        top:
+                            skip: true
+                        bottom:
+                            bind: b
+                ring:
+                    key:
+                        splay: -10
+                        stagger: 15
+                        spread: 20.5
+                        col_net: P20
+                        bind:
+                            - b
+                            - hx+b
+                            - b
+                            - b
+                middle:
+                    key:
+                        splay: -5
+                        stagger: 10
+                        spread: kx + 0.8
+                        col_net: P19
+                index:
+                    key:
+                        splay: -5
+                        stagger: -10
+                        col_net: P18
+                        bind:
+                            - b
+                            - b
+                            - 2b
+                            - hx
+                inner:
+                    key:
+                        stagger: -5
+                        bind:
+                            - b+5
+                            - b
+                            - ky
+                            - b
+                        col_net: P6
+        thumb:
+            anchor:
+                ref: main_inner_bottom
+                shift:
+                    - '-hx'
+                    - '-2hy'
+            key:
+                splay: -10
+                tags:
+                    alphas: true
+            rows:
+                home:
+                    row_net: P5
+            columns:
+                tuckie:
+                    key:
+                        bind:
+                            - kx
+                            - b
+                            - kx
+                            - b
+                        col_net: P20
+                large:
+                    key:
+                        shift:
+                            - 3
+                            - -2
+                        col_net: P19
+                        bind:
+                            - b
+                            - b
+                            - kx
+                            - b
+                stretchie:
+                    key:
+                        shift:
+                            - 6.5
+                            - -3.5
+                        col_net: P18
+                        bind:
+                            - b
+                            - b
+                            - kx
+                            - b
+        encoder:
+            anchor:
+                ref: main_inner_bottom
+                shift:
+                    - px
+                    - '-0.1ky'
+            key:
+                tags:
+                    rotary: true
+            rows:
+                key:
+                    row_net: P5
+            columns:
+                rotary:
+                    key:
+                        bind:
+                            - b
+                            - b
+                            - ky
+                            - b
+                        col_net: P6
+outlines:
+    _raw:
+        -
+            what: rectangle
+            where:
+                - /alphas/
+                - /rotary/
+            size:
+                - px
+                - py
+            bound: true
+    _trrs:
+        -
+            what: rectangle
+            adjust:
+                ref: main_inner_top
+                shift:
+                    - 1.6px
+                    - 10.5
+            size:
+                - 6+2b
+                - 12+2b
+    _controller1:
+        -
+            what: rectangle
+            adjust:
+                ref: main_inner_top
+                shift:
+                    - 0
+                    - 7
+            size:
+                - 3px+2b
+                - py
+    _controller2:
+        -
+            what: rectangle
+            adjust:
+                ref: main_inner_home
+            size:
+                - 3px+2b
+                - 2py
+    _circ_thumb:
+        -
+            what: circle
+            adjust:
+                ref: thumb_large_home
+                shift:
+                    - 0
+                    - '-6.95ky'
+            radius: 6.2ky
+    _composite_without_controller:
+        -
+            name: _raw
+        -
+            operation: subtract
+            name: _circ_thumb
+    _composite_with_controller:
+        -
+            name: _composite_without_controller
+        -
+            operation: add
+            name: _controller1
+        -
+            operation: add
+            name: _controller2
+        -
+            operation: add
+            name: _trrs
+    board:
+        -
+            what: outline
+            name: _composite_with_controller
+            fillet: 2
+    _keys:
+        -
+            what: rectangle
+            where:
+                - /alphas/
+                - /rotary/
+            bound: false
+            size:
+                - kx-0.5
+                - ky-0.5
+    _switch_cutouts:
+        -
+            what: rectangle
+            where:
+                - /alphas/
+                - /rotary/
+            size: 14
+    preview:
+        -
+            name: board
+        -
+            operation: subtract
+            name: _keys
+    _plate:
+        -
+            what: outline
+            name: _composite_without_controller
+            fillet: 3
+    switch_plate:
+        -
+            name: _plate
+        -
+            operation: subtract
+            name: _switch_cutouts
+pcbs:
+    jwe_switch_plate:
+        outlines:
+            main:
+                outline: switch_plate
+    jwe:
+        outlines:
+            main:
+                outline: board
+        footprints:
+            mx_hotswap:
+                what: mx
+                params:
+                    keycaps: true
+                    reverse: true
+                    hotswap: true
+                    from: '{{colrow}}'
+                    to: '{{col_net}}'
+                where: alphas
+            leds:
+                what: rgb
+                params:
+                    din: '{{colrow}}'
+                    dout: '{{row_net}}'
+                where: alphas
+                adjust:
+                    shift:
+                        - 0
+                        - 5
+            diode:
+                what: diode
+                params:
+                    from: '{{colrow}}'
+                    to: '{{row_net}}'
+                where: alphas
+                adjust:
+                    shift:
+                        - 0
+                        - 5
+            diode_rotary:
+                what: diode
+                params:
+                    from: rotary
+                    to: '{{row_net}}'
+                where: rotary
+                adjust:
+                    rotate: 90
+                    shift:
+                        - 4
+                        - 0
+            promicro:
+                what: promicro_pretty
+                params: null
+                where:
+                    ref: main_inner_top
+                    rotate: 270
+                    shift:
+                        - px
+                        - 0
+            rotary:
+                what: rotary
+                params:
+                    from: rotary
+                    to: P6
+                    A: P9
+                    B: P8
+                    C: GND
+                where: rotary
+            reset:
+                what: button
+                params:
+                    from: RST
+                    to: GND
+                where:
+                    ref: main_inner_bottom
+                    shift:
+                        - px
+                        - 13
+            reset_back:
+                what: button
+                params:
+                    from: RST
+                    to: GND
+                    side: B
+                where:
+                    ref: main_inner_bottom
+                    shift:
+                        - px
+                        - 13
+            vias:
+                what: via
+                where: alphas
+                adjust:
+                    shift:
+                        - hx-b
+                        - '-hy+b+5'
+                params:
+                    net: '{{col_net}}'
+            battery_header:
+                what: reversible_battery
+                params:
+                    pos: bat
+                    neg: GND
+                where:
+                    ref: main_inner_top
+                    shift:
+                        - px
+                        - 0.9ky-0.5
+            powerswitch_back:
+                what: slider
+                params:
+                    to: RAW
+                    from: bat
+                    side: B
+                where:
+                    ref: main_inner_top
+                    shift:
+                        - 0.4kx
+                        - 0.5ky+3.5b
+            powerswitch_front:
+                what: slider
+                params:
+                    to: RAW
+                    from: bat
+                where:
+                    ref: main_inner_top
+                    shift:
+                        - 0.4kx
+                        - 0.5ky+3.5b
+            niceview:
+                what: combo_display
+                where:
+                    ref: main_inner_bottom
+                    shift:
+                        - px
+                        - ky-1
+                params:
+                    oled: nice_view
+            trrs:
+                what: trrs
+                params:
+                    reverse: true
+                    symmetric: true
+                    A: GND
+                    B: GND
+                    C: VCC
+                    D: P0
+                where:
+                    ref: main_inner_top
+                    shift:
+                        - 1.7px
+                        - 17

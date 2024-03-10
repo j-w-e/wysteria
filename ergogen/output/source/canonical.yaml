@@ -1,0 +1,622 @@
+units:
+    kx: u
+    ky: u
+    px: kx + 4
+    py: ky + 4
+    hx: 0.5kx
+    hy: 0.5ky
+    b: 1
+    screw_radius: 1.1
+    spacer_radius: 2.05
+    fillet_size: 2
+points:
+    key:
+        bind: b
+    zones:
+        main:
+            anchor:
+                shift:
+                    - 100
+                    - -200
+            rotate: 5
+            key:
+                padding: ky
+                spread: kx
+                tags:
+                    alphas: true
+            rows:
+                bottom:
+                    row_net: r_bottom
+                home:
+                    row_net: r_home
+                top:
+                    row_net: r_top
+            columns:
+                pinkie:
+                    key:
+                        col_net: c_pinkie
+                    rows:
+                        top:
+                            adjust:
+                                shift:
+                                    - '-kx'
+                                    - '-0.8ky'
+                            key:
+                                led_prev: LED_17
+                                led_next: LED_18
+                        home:
+                            key:
+                                led_prev: LED_16
+                                led_next: LED_17
+                        bottom:
+                            key:
+                                led_prev: LED_15
+                                led_next: LED_16
+                ring:
+                    key:
+                        splay: -5
+                        stagger: 10
+                        spread: 20.5
+                        col_net: c_ring
+                        bind:
+                            - b
+                            - b
+                            - b
+                            - b
+                    rows:
+                        top:
+                            key:
+                                led_prev: LED_12
+                                led_next: LED_13
+                        home:
+                            key:
+                                led_prev: LED_13
+                                led_next: LED_14
+                        bottom:
+                            key:
+                                led_prev: LED_14
+                                led_next: LED_15
+                middle:
+                    key:
+                        stagger: 10
+                        col_net: c_middle
+                    rows:
+                        top:
+                            key:
+                                led_prev: LED_11
+                                led_next: LED_12
+                        home:
+                            key:
+                                led_prev: LED_10
+                                led_next: LED_11
+                        bottom:
+                            key:
+                                led_prev: LED_9
+                                led_next: LED_10
+                index:
+                    key:
+                        stagger: -10
+                        col_net: c_index
+                        bind:
+                            - b
+                            - b
+                            - b
+                            - kx
+                    rows:
+                        top:
+                            key:
+                                led_prev: LED_6
+                                led_next: LED_7
+                        home:
+                            key:
+                                led_prev: LED_7
+                                led_next: LED_8
+                        bottom:
+                            key:
+                                led_prev: LED_8
+                                led_next: LED_9
+                inner:
+                    key:
+                        stagger: -2
+                        bind:
+                            - b+2
+                            - b
+                            - ky
+                            - b
+                        col_net: c_inner
+                    rows:
+                        top:
+                            key:
+                                led_prev: LED_5
+                                led_next: LED_6
+                        home:
+                            key:
+                                led_prev: LED_4
+                                led_next: LED_5
+                        bottom:
+                            key:
+                                led_prev: LED_3
+                                led_next: LED_4
+        thumb:
+            anchor:
+                ref: main_inner_bottom
+                shift:
+                    - '-hx'
+                    - '-2hy'
+            key:
+                splay: -10
+                tags:
+                    alphas: true
+            rows:
+                home:
+                    row_net: r_thumb
+            columns:
+                tuckie:
+                    key:
+                        bind:
+                            - kx
+                            - b
+                            - b
+                            - b
+                        col_net: c_ring
+                    rows:
+                        home:
+                            key:
+                                led_prev: LED_2
+                                led_next: LED_3
+                central:
+                    key:
+                        shift:
+                            - 3
+                            - -2
+                        col_net: c_middle
+                        bind:
+                            - b
+                            - b
+                            - b
+                            - b
+                    rows:
+                        home:
+                            key:
+                                led_prev: LED_1
+                                led_next: LED_2
+                stretchie:
+                    key:
+                        shift:
+                            - 6.5
+                            - -3.5
+                        col_net: c_index
+                        bind:
+                            - b
+                            - b
+                            - b
+                            - b
+                    rows:
+                        home:
+                            key:
+                                led_prev: led
+                                led_next: LED_1
+        encoder:
+            anchor:
+                ref: main_inner_bottom
+                shift:
+                    - px
+                    - '-0.2ky'
+            key:
+                tags:
+                    rotary: true
+            rows:
+                key:
+                    row_net: r_thumb
+            columns:
+                rotary:
+                    key:
+                        bind:
+                            - 0
+                            - b
+                            - ky
+                            - b
+                        col_net: c_inner
+outlines:
+    _raw:
+        -
+            what: rectangle
+            where:
+                - /alphas/
+                - /rotary/
+            size:
+                - px
+                - py
+            bound: true
+    _extension_for_index:
+        -
+            what: rectangle
+            adjust:
+                ref: main_index_top
+                shift:
+                    - 0
+                    - 5
+            size:
+                - px
+                - py
+    _extension_for_inner:
+        -
+            what: rectangle
+            adjust:
+                ref: main_inner_top
+                shift:
+                    - 0
+                    - 7
+            size:
+                - px+2b
+                - py
+    _screws:
+        -
+            what: circle
+            radius: screw_radius
+            adjust:
+                ref: main_pinkie_home
+                shift:
+                    - '-0.5 kx'
+                    - '-0.5 hy'
+        -
+            what: circle
+            radius: screw_radius
+            adjust:
+                ref: main_middle_top
+                shift:
+                    - '-0.5 kx'
+                    - '-0.5 hy'
+        -
+            what: circle
+            radius: screw_radius
+            adjust:
+                ref: main_middle_bottom
+                shift:
+                    - '-0.5 kx'
+                    - '-0.5 hy'
+        -
+            what: circle
+            radius: screw_radius
+            adjust:
+                ref: main_inner_top
+                shift:
+                    - '-0.5 kx'
+                    - '-0.5 hy'
+        -
+            what: circle
+            radius: screw_radius
+            adjust:
+                ref: main_inner_bottom
+                shift:
+                    - '-0.5 kx'
+                    - '-0.5 hy'
+        -
+            what: circle
+            radius: screw_radius
+            adjust:
+                ref: thumb_stretchie_home
+                shift:
+                    - '-0.5 kx'
+                    - '-0.5 hy'
+    _trrs:
+        -
+            what: rectangle
+            adjust:
+                ref: main_inner_top
+                shift:
+                    - 1.6px
+                    - 11
+            size:
+                - 8
+                - 15
+    _controller1:
+        -
+            what: rectangle
+            adjust:
+                ref: main_inner_top
+                shift:
+                    - 0
+                    - 7
+            size:
+                - 3px+2b
+                - py
+    _controller2:
+        -
+            what: rectangle
+            adjust:
+                ref: main_inner_home
+            size:
+                - 3px+2b
+                - 2py
+    _circ_thumb:
+        -
+            what: circle
+            adjust:
+                ref: thumb_tuckie_home
+                shift:
+                    - -5
+                    - '-7ky'
+            radius: 6.4ky
+    _composite_without_controller:
+        -
+            name: _raw
+        -
+            operation: subtract
+            name: _circ_thumb
+        -
+            operation: add
+            name: _extension_for_index
+        -
+            operation: add
+            name: _extension_for_inner
+    _composite_with_controller:
+        -
+            name: _composite_without_controller
+        -
+            operation: add
+            name: _controller1
+        -
+            operation: add
+            name: _controller2
+        -
+            operation: add
+            name: _trrs
+    board:
+        -
+            what: outline
+            name: _composite_with_controller
+            fillet: fillet_size
+        -
+            what: outline
+            name: _screws
+            operation: subtract
+    _keys:
+        -
+            what: rectangle
+            where:
+                - /alphas/
+                - /rotary/
+            bound: false
+            size:
+                - kx-0.5
+                - ky-0.5
+    _switch_cutouts:
+        -
+            what: rectangle
+            where:
+                - /alphas/
+                - /rotary/
+            size: 14
+    _plate:
+        -
+            what: outline
+            name: _composite_without_controller
+            fillet: fillet_size
+        -
+            what: outline
+            name: _screws
+            operation: subtract
+    switch_plate:
+        -
+            name: _plate
+        -
+            operation: subtract
+            name: _switch_cutouts
+    preview:
+        -
+            name: board
+        -
+            operation: subtract
+            name: _keys
+        -
+            operation: stack
+            name: switch_plate
+pcbs:
+    jwe_switch_plate:
+        outlines:
+            main:
+                outline: switch_plate
+    jwe:
+        outlines:
+            main:
+                outline: board
+        footprints:
+            mx_hotswap:
+                what: mx
+                params:
+                    keycaps: true
+                    reverse: true
+                    hotswap: true
+                    from: '{{colrow}}'
+                    to: '{{col_net}}'
+                where: alphas
+            per_key_rgb:
+                what: sk6812minie
+                params:
+                    dout: '{{key.led_next}}'
+                    din: '{{key.led_prev}}'
+                where: alphas
+                adjust:
+                    shift:
+                        - 0
+                        - -4.75
+                    rotate: 180
+            rotary:
+                what: rotary
+                params:
+                    from: '{{colrow}}'
+                    to: '{{col_net}}'
+                    A: rot_clock
+                    B: rot_anticlock
+                    C: GND
+                where: rotary
+            diode:
+                what: diode
+                params:
+                    from: '{{colrow}}'
+                    to: '{{row_net}}'
+                where: alphas
+                adjust:
+                    shift:
+                        - 0
+                        - 9
+            diode_rotary:
+                what: diode
+                params:
+                    from: '{{colrow}}'
+                    to: '{{row_net}}'
+                where: rotary
+                adjust:
+                    rotate: 90
+                    shift:
+                        - 4
+                        - 0
+            promicro:
+                what: promicro_pretty
+                params:
+                    P1: led
+                    P0: data
+                    P2: mosi
+                    P3: sck
+                    P4: r_top
+                    P5: r_home
+                    P6: r_bottom
+                    P7: r_thumb
+                    P8: rot_clock
+                    P9: rot_anticlock
+                    P21: c_thumb
+                    P20: c_pinkie
+                    P19: c_ring
+                    P18: c_middle
+                    P15: c_index
+                    P14: c_inner
+                where:
+                    ref: main_inner_top
+                    rotate: 270
+                    shift:
+                        - px
+                        - 0
+            niceview:
+                what: combo_display
+                where:
+                    ref: main_inner_bottom
+                    shift:
+                        - px
+                        - ky-1
+                params:
+                    oled: nice_view
+                    P5: data
+                    P4: mosi
+                    P3: sck
+            reset:
+                what: button
+                params:
+                    from: RST
+                    to: GND
+                where:
+                    ref: main_inner_bottom
+                    shift:
+                        - px
+                        - 13
+            reset_back:
+                what: button
+                params:
+                    from: RST
+                    to: GND
+                    side: B
+                where:
+                    ref: main_inner_bottom
+                    shift:
+                        - px
+                        - 13
+            vias:
+                what: via
+                where: alphas
+                adjust:
+                    shift:
+                        - '-hx+b'
+                        - 7
+                params:
+                    net: '{{col_net}}'
+            battery_header:
+                what: reversible_battery
+                params:
+                    pos: bat
+                    neg: GND
+                where:
+                    ref: main_inner_top
+                    shift:
+                        - px
+                        - 0.9ky-0.5
+            powerswitch_back:
+                what: slider
+                params:
+                    to: RAW
+                    from: bat
+                    side: B
+                where:
+                    ref: main_inner_top
+                    shift:
+                        - 0.4kx
+                        - 0.5ky+7
+            powerswitch_front:
+                what: slider
+                params:
+                    to: RAW
+                    from: bat
+                where:
+                    ref: main_inner_top
+                    shift:
+                        - 0.4kx
+                        - 0.5ky+7
+            trrs:
+                what: trrs
+                params:
+                    reverse: true
+                    symmetric: true
+                    A: VCC
+                    B: VCC
+                    C: GND
+                    D: data
+                where:
+                    ref: main_inner_top
+                    shift:
+                        - 1.7px
+                        - 17
+            wysteria:
+                what: diode
+                params:
+                    from: test
+                    to: test
+                where:
+                    ref: main_middle_bottom
+                    shift:
+                        - 0
+                        - '-py+7'
+            text_front:
+                what: text
+                params:
+                    text: 'Wysteria, by j-w-e'
+                    justify: left
+                    h_size: 1.5
+                    v_size: 1.5
+                    layer: F.SilkS
+                where:
+                    ref: main_index_top
+                    shift:
+                        - '-0.6hx'
+                        - hy+4
+            text_back:
+                what: text
+                params:
+                    text: 'Wysteria, by j-w-e'
+                    justify: right mirror
+                    h_size: 1.5
+                    v_size: 1.5
+                    layer: B.SilkS
+                where:
+                    ref: main_index_top
+                    shift:
+                        - '-0.6hx'
+                        - hy+4
