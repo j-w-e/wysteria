@@ -6,7 +6,7 @@ This is my custom split 36-key keyboard, with an encoder knob on each hand, and 
 
 The pcbs, and the source ergogen file used to generate v0.3, can be found in the pcbs folder.
 
-It has working firmware for both QMK and ZMK.
+It has working firmware for both QMK and ZMK. Source files are in the repo, but I have not put this into the main repos for either QMK or ZMK. My own build process symlinks these as appropriate.
 
 ## NOTES
 v0.3 has been printed and tested, and is my current daily driver. However, please note that to build it, the diodes on the thumb cluster need to be handwired to the rows. The traces on the PCB itself are incorrect. This has been fixed in the ergogen config file, ready for if and when I print it again, but this has not had all the traces set up in KiCad, and has not been printed or tested.

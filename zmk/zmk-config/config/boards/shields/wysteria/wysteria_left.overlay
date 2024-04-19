@@ -1,0 +1,20 @@
+#include "wysteria.dtsi"
+
+&nice_view_spi {
+        cs-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;
+};
+
+&kscan0 {
+    col-gpios
+        = <&pro_micro 20 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 19 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 18 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 14 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 21 GPIO_ACTIVE_HIGH>
+        ;
+};
+
+&left_encoder {
+    status = "okay";
+};

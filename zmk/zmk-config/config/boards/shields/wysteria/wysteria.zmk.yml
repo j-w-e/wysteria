@@ -1,0 +1,17 @@
+file_format: "1"
+id: wysteria
+name: Wysteria
+type: shield
+url: https://github.com/j-w-e/jwekb
+# requires: [pro_micro]
+requires: 
+  - [pro_micro]
+  - [i2c_oled]
+# exposes: [nice_view_header]
+features:
+  - keys
+  - encoder
+  # - display
+siblings:
+  - wysteria_left
+  - wysteria_right
