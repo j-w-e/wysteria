@@ -34,6 +34,7 @@ v0.3 has been printed and tested, and is my current daily driver. However, pleas
 
 * [Z-fold tripod](https://www.aliexpress.com/item/1005006313678530.html)
 * [Magsafe tripod adapter](https://www.aliexpress.com/item/1005006074567830.html)
+* [Folding laptop stands](https://www.temu.com/goods.html?_bg_fs=1&goods_id=601099538883858&_x_sessn_id=7odffn4414)
 
 ## To do
 
