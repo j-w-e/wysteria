@@ -7,7 +7,7 @@ The pcbs, and the source ergogen file used to generate them, can be found in the
 It has working firmware for both QMK and ZMK.
 
 ## NOTES
-v0.3 has been printed and tested, and is my current daily driver. However, please note that to build it, the diodes on the thumb cluster need to be handwired to the rows. The traces on the PCB itself are incorrect. This has been fixed in the ergogen config file for v0.4, but this has not had all the traces set up in KiCad, nor printed.
+v0.3 has been printed and tested, and is my current daily driver. However, please note that to build it, the diodes on the thumb cluster need to be handwired to the rows. The traces on the PCB itself are incorrect. This has been fixed in the ergogen config file, ready for if and when I print it again, but this has not had all the traces set up in KiCad, and has not been printed or tested.
 
 * Will (should) work with both QMK (with an oled and trrs) and ZMK (with nice!nano and nice!view)
 * If using a display, make sure to solder the jumpers _on the opposite side_ of the board to where the dislay is mounted. This is different to the MCU jumpers, which should be soldered on the same side as the MCU (if mounting face-up)
