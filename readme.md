@@ -2,7 +2,7 @@
 
 This is my custom split 36-key keyboard, with an encoder knob on each hand, and a pinky cluster to avoid stretching my pinky – I find lateral movement easier.
 
-[./images/1.jpg]
+![](./images/1.jpg)
 
 The pcbs, and the source ergogen file used to generate v0.3, can be found in the pcbs folder.
 
