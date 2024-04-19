@@ -2,7 +2,9 @@
 
 This is my custom split 36-key keyboard, with an encoder knob on each hand, and a pinky cluster to avoid stretching my pinky – I find lateral movement easier.
 
-The pcbs, and the source ergogen file used to generate them, can be found in the pcbs folder.
+[./images/1.jpg]
+
+The pcbs, and the source ergogen file used to generate v0.3, can be found in the pcbs folder.
 
 It has working firmware for both QMK and ZMK.
 
@@ -11,7 +13,7 @@ v0.3 has been printed and tested, and is my current daily driver. However, pleas
 
 * Will (should) work with both QMK (with an oled and trrs) and ZMK (with nice!nano and nice!view)
 * If using a display, make sure to solder the jumpers _on the opposite side_ of the board to where the dislay is mounted. This is different to the MCU jumpers, which should be soldered on the same side as the MCU (if mounting face-up)
-* The ergogen config places an extra diode below the middle finger, bottom row. I manually replace this in KiCad with the Wysteria graphic.
+* The ergogen config places an extra diode below the middle finger, bottom row. I manually replace this in KiCad with the Wysteria graphic. (I haven't worked out how to make the graphic into an ergogen-compatible footprint. I'm happy with the manual step for now.)
 
 ## Parts used
 * [Liatris](https://splitkb.com/collections/keyboard-parts/products/liatris) or [nice!nano](https://splitkb.com/collections/keyboard-parts/products/nice-nano)
@@ -26,7 +28,7 @@ v0.3 has been printed and tested, and is my current daily driver. However, pleas
 * [EC11](https://www.aliexpress.com/item/1005003824684681.html?spm=a2g0o.cart.0.0.5d5838daGifwXE&mp=1)
 * [EC11 knob](https://github.com/GEIGEIGEIST/KLOR/tree/main/knob) from GEIST
 * [M2 screws](url)
-* Switches and keycaps (all 1u). My current set-up has [Boba U4](https://splitkb.com/collections/switches-and-keycaps/products/gazzew-boba-u4-silent-tactile-switch?_pos=1&_fid=bebc80122&_ss=c) in the office, [Boba U4Tx](https://splitkb.com/collections/switches-and-keycaps/products/gazzew-boba-u4tx-thocky-tactile-switch?_pos=7&_fid=bebc80122&_ss=c) at home, and [DES](https://github.com/sporkus/PseudoMakeMeKeyCapProfiles/tree/master/stl/MX)
+* Switches and keycaps (all 1u). My current set-up has [Boba U4](https://splitkb.com/collections/switches-and-keycaps/products/gazzew-boba-u4-silent-tactile-switch?_pos=1&_fid=bebc80122&_ss=c) in the office, [Boba U4Tx](https://splitkb.com/collections/switches-and-keycaps/products/gazzew-boba-u4tx-thocky-tactile-switch?_pos=7&_fid=bebc80122&_ss=c) at home, and [DES](https://github.com/sporkus/PseudoMakeMeKeyCapProfiles/tree/master/stl/MX) printed by JLCPCB
 
 ### Tenting set-up
 
